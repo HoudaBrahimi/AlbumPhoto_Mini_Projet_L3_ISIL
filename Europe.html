@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Albums.css" /><!-- Insertion du fichier css-->
+    <title>Les merveilles de l'Europe</title><!-- Le titre de la page-->
+  </head>
+
+<script src="Albums.js"> </script><!-- Insertion du fichier Javascript-->
+
+<body>
+  <!-- Cette premiere partie contient un lien vers la page d'accueil.-->
+  <a style=" text-align: left; font-size: 18px; color: #ce5626;" href="Accueil_Index.html" > ◀ Retour à la page principale.</a> </br>
+
+<h1 style="text-align:center "> Les merveilles de l'Europe:  </h1><!-- Le titre de la page-->
+<h3 style=" color:rgba(0, 0, 0, 0.795);  text-align: center;"> Veuillez choisir une image parmi les images ci-dessous pour commencer la diapositive (Le slide): </h3>
+
+<!--  Dans la partie suivante on a organisé les photos sous forme d'un tableau sans bordures (La classe "row") 
+      telle que chaque ligne contient 04 photos et en tous on a inséré 08 photos par continent (En 02 lignes)
+      donc (08*05 = 40 photos sur tous le projet).
+      
+      Lorsque le curseur est placé sur la photo elle va être zoomée. Et un simple clic sur la photo 
+      commence le slide qui contient (les photos + leurs description)  -->
+
+<!--  Chaque photo est placée dans une classe ".column" et toutes les photos sont de la même dimension (600*400) -->
+
+<div class="row">
+  <div class="column">
+    <img src="AuroresNorvegeMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  
+  <div class="column">
+    <img src="CascadeJägalaEstoniaMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="ChausseeGeantsIrlandeMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+ 
+  <div class="column">
+    <img src="GrotteBenagilPortugalMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  
+  <div class="column">
+    <img src="GrotteBleuGreceMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="GrotteMelissaniGreceMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="pamukkaleTurquieMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="PlageNoireIslandeMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+  </div>
+  
+</div>
+
+<!-- Cette partie permet de créer une croix pour fermer le slide par l'appel à la fonction "closeModal()" déclaré dans le 
+     fichier (Javascript) dans la fonction "onclick()"-->
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times; </span>
+  
+  <!-- La classe "modal-content" contient le slide complet des photos (La diapositive)
+    tq: toutes les images ont la même dimension (1200*600) -->
+
+  <div class="modal-content">
+
+<!-- On a mit chaque slide dans une classe appelée "mySlides" pour pouvoir l'utilisée à plusieurs reprise.-->
+    <div class="mySlides">
+      <div class="numbertext">1 / 8</div><!-- La numérotation de la page. -->
+      <img src="AuroresNorvege.jpg" style="width:100%"> <!-- Le nom de l'image + sa taille-->
+    </div>    
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 8</div><!-- La numérotation de la page. -->
+      <img src="CascadeJägalaEstonia.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 8</div><!-- La numérotation de la page. -->
+      <img src="ChausseeGeantsIrlande.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 8</div><!-- La numérotation de la page. -->
+      <img src="GrotteBenagilPortugal.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 8</div><!-- La numérotation de la page. -->
+      <img src="GrotteBleuGrece.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 8</div><!-- La numérotation de la page. -->
+      <img src="GrotteMelissaniGrece.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 8</div><!-- La numérotation de la page. -->
+      <img src="pamukkaleTurquie.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">8 / 8</div><!-- La numérotation de la page. -->
+      <img src="PlageNoireIslande.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+<!-- Ici une petite description sur l'image qui indique le nom de la merveille et son emplacement géographique
+   avec l'id="caption" et dans une balise de type paragraphe <p></p>.
+   Telle que le paragraphe se trouve dans l'attribut alt sur chaque images -->
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+     
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- Pour aller vers l'image précédente par une flèche.-->
+    <a class="next" onclick="plusSlides(1)">&#10095;</a><!-- Pour aller vers l'image suivante par une flèche.-->
+
+<!-- Cette partie et un mini tableau contenant toutes les images en-dessous de la description sur le slide 
+     et qui permet de de passer d'une image vers une autre par un simple clic sur l'image (Comme en light-box). 
+     Toutes les images ont la même dimension 600*400. -->
+
+<!-- Onclick fait appel à la fonction currentSlide() crée sur le script javascript pour afficher l'image actuelle.-->   
+    <div class="column">
+      <img class="demo cursor" src="AuroresNorvegeMini.jpg" style="width:100%" onclick="currentSlide(1)" alt="<i><u>Aurore Boréale (Norvege)</u></i>: </br> C'est un phénomène physique produisant dans le ciel de la lumière où la lumière produite est majoritairement verte.">
+    </div>        
+
+    <div class="column">
+      <img class="demo cursor" src="CascadeJägalaEstoniaMini.jpg" style="width:100%" onclick="currentSlide(2)" alt="<i><u>La cascade Jägala (Estonie)</u></i>:</br> C'est une cascade située dans le nord de l'Estonie sur la rivière Jägala, et c'est la plus haute cascade naturelle d'Estonie avec une hauteur d'environ 8 mètres.">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="ChausseeGeantsIrlandeMini.jpg" style="width:100%" onclick="currentSlide(3)" alt="<i><u> La Chaussée des Géants (Irlande)</u></i>: </br> C'est une formation volcanique située sur la côte d'Irlande du Nord.">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="GrotteBenagilPortugalMini.jpg" style="width:100%" onclick="currentSlide(4)" alt=" <i><u> Grotte Benagil (Portugal)</u></i>: </br> C'est une grotte remarquable au bord de l'océan, accessible en bateau et connue pour l'ouverture de son plafond.">
+    </div> 
+    
+    <div class="column">
+      <img class="demo cursor" src="GrotteBleuGreceMini.jpg" style="width:100%" onclick="currentSlide(5)" alt=" <i><u> Grotte bleue (Grece)</u></i>: </br> C'est une grotte au milieu de la mer. Elle est réputée pour les reflets bleu cobalt lumineux de ses parois et pour son eau claire cristalline.">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="GrotteMelissaniGreceMini.jpg" style="width:100%" onclick="currentSlide(6)" alt="<i><u> Grotte de Melissani (Grece)</u></i>:</br>Une grotte de roche karstique naturelle, causées par les tremblements de terre et la dissolution du calcaire.">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="pamukkaleTurquieMini.jpg" style="width:100%" onclick="currentSlide(7)" alt="<i><u> Pamukkale (Turquie)</u></i>: </br> Ce site, dont le nom signifie ⟪ Château de coton ⟫ en turc, ces cascades et vasques sont faites de calcaire mais ont l'apparence du coton ou d'une chute d'eau gelée.">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="PlageNoireIslandeMini.jpg" style="width:100%" onclick="currentSlide(8)" alt=" <i><u>  Reynisfjara (Islande)</u></i>: </br> C'est une plage de sable noir située sur la côte sud de l'Islande.">
+    </div> 
+
+  </div>
+</div> <!-- Fin du slide des images.-->
+
+</body>
+</html><!-- Fin du fichier HTML.-->

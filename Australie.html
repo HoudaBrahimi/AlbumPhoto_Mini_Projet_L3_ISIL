@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Albums.css" /><!-- Insertion du fichier css-->
+    <title>Les merveilles de l'Australie</title><!-- Le titre de la page-->
+  </head>
+
+<script src="Albums.js"> </script><!-- Insertion du fichier Javascript-->
+
+<body>
+  <!-- Cette premiere partie contient un lien vers la page d'accueil.-->
+  <a style=" text-align: left; font-size: 18px; color: #ce5626;" href="Accueil_Index.html" > ◀ Retour à la page principale.</a> </br>
+
+
+<h1 style="text-align:center "> <i>Les merveilles de l'Australie:  </i></h1><!-- Le titre de la page-->
+<h3 style=" color:rgba(0, 0, 0, 0.795);  text-align: center;"> Veuillez choisir une image parmi les images ci-dessous pour commencer la diapositive(Le slide): </h3>
+
+<!--  Dans la partie suivante on a organisé les photos sous forme d'un tableau sans bordures (La classe "row") 
+      telle que chaque ligne contient 04 photos et en tous on a inséré 08 photos par continent (En 02 lignes)
+      donc (08*05 = 40 photos sur tous le projet).
+      
+      Lorsque le curseur est placé sur la photo elle va être zoomée. Et un simple clic sur la photo 
+      commence le slide qui contient (les photos + leurs description)  -->
+
+<!--  Chaque photo est placée dans une classe ".column" et toutes les photos sont de la même dimension (600*400) -->
+
+<div class="row">
+  <div class="column">
+    <img src="TjutaMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  
+  <div class="column">
+    <img src="CorailMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="BayOfFiresMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+ 
+  <div class="column">
+    <img src="NitmilukMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  
+  <div class="column">
+    <img src="LacHillierMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="PlanctonBioluminescentMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="PinnaclesMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="WilpenaPoundMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+  </div>
+  
+</div>
+
+<!-- Cette partie permet de créer une croix pour fermer le slide par l'appel à la fonction "closeModal()" déclaré dans le 
+     fichier (Javascript) dans la fonction "onclick()"-->
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times; </span>
+
+  <!-- La classe "modal-content" contient le slide complet des photos (La diapositive)
+    tq: toutes les images ont la même dimension (1200*600) -->
+
+  <div class="modal-content">
+
+<!-- On a mit chaque slide dans une classe appelée "mySlides" pour pouvoir l'utilisée à plusieurs reprise.-->
+    <div class="mySlides">
+      <div class="numbertext">1 / 8</div><!-- La numérotation de la page. -->
+      <img src="Tjuta.jpg" style="width:100%"> <!-- Le nom de l'image + sa taille-->
+    </div>    
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 8</div><!-- La numérotation de la page. -->
+      <img src="Corail.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 8</div><!-- La numérotation de la page. -->
+      <img src="BayOfFires.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 8</div><!-- La numérotation de la page. -->
+      <img src="Nitmiluk.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 8</div><!-- La numérotation de la page. -->
+      <img src="LacHillier.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 8</div><!-- La numérotation de la page. -->
+      <img src="PlanctonBioluminescent.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 8</div><!-- La numérotation de la page. -->
+      <img src="Pinnacles.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">8 / 8</div><!-- La numérotation de la page. -->
+      <img src="WilpenaPound.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+<!-- Ici une petite description sur l'image qui indique le nom de la merveille et son emplacement géographique
+    avec l'id="caption" et dans une balise de type paragraphe <p></p>.
+    Telle que le paragraphe se trouve dans l'attribut alt sur chaque images -->
+    
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+      
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- Pour aller vers l'image précédente par une flèche.-->
+    <a class="next" onclick="plusSlides(1)">&#10095;</a><!-- Pour aller vers l'image suivante par une flèche.-->
+
+<!-- Cette partie et un mini tableau contenant toutes les images en-dessous de la description sur le slide 
+     et qui permet de de passer d'une image vers une autre par un simple clic sur l'image (Comme en light-box). 
+     Toutes les images ont la même dimension 600*400. -->
+
+<!-- Onclick fait appel à la fonction currentSlide() crée sur le script javascript pour afficher l'image actuelle.-->   
+
+    <div class="column">
+      <img class="demo cursor" src="TjutaMini.jpg" style="width:100%" onclick="currentSlide(1)" alt=" <i> <u> Uluṟu-Kata Tjuṯa (Ayers Rock-Mont Olga) </u> </i>: </br> C'est un parc national classé au patrimoine mondial_02 par l'UNESCO.">
+    </div>        
+
+    <div class="column">
+      <img class="demo cursor" src="CorailMini.jpg" style="width:100%" onclick="currentSlide(2)" alt=" <i><u> La Grande Barrière de Corail </u> </i>: </br> C'est le plus grand récif corallien de la planète. Abritant une vie marine étonnante et diversifiée, elle est entourée d'îles tropicales pittoresques.">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="BayOfFiresMini.jpg" style="width:100%" onclick="currentSlide(3)" alt=" <i><u> La Bay of Fires (Launceston)</u> </i>: </br> Elle compte d'incroyables blocs de granit recouverts de lichen orange vif.">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="NitmilukMini.jpg" style="width:100%" onclick="currentSlide(4)" alt="<i> <u> Le Nitmiluk National Park </u></i>: </br> C'est un parc qui s'étend sur près de 292 800 hectares. Il renferme une succession de 13 gorges, formées le long de la Katherine River, dans un cadre magnifique à la végétation tropicale.">
+    </div> 
+    
+    <div class="column">
+      <img class="demo cursor" src="LacHillierMini.jpg" style="width:100%" onclick="currentSlide(5)" alt=" <i><u>  le lac Hillier (Esperance) </u> </i>:</br> C'est  un grand lac en Australie, connu pour son incroyable couleur rose bonbon éclatante.">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="PlanctonBioluminescentMini.jpg" style="width:100%" onclick="currentSlide(6)" alt="<i> <u>Plancton Bioluminescent (Jervis) </u> <i>: </br> C'est un phénomène naturel magique tel que le mouvement de l'eau et les marcheurs nocturnes, émettant de la lumière bleue.">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="PinnaclesMini.jpg" style="width:100%" onclick="currentSlide(7)" alt="<i> <u> Les Pinnacles (Penth)</u> <i>: </br> Ce sont un gigantesque ensemble de piliers de calcaire géants, dont certains atteignent 05 mètres de haut.">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="WilpenaPoundMini.jpg" style="width:100%" onclick="currentSlide(8)" alt="<i> <u> Le Wilpena Pound (Flinders Ranges)</u></i>: </br>C'est un vaste cratère creusé dans le désert, niché au cœur de montagnes escarpées.">
+    </div> 
+
+  </div>
+</div> <!-- Fin du slide des images.-->
+
+</body>
+</html><!-- Fin du fichier HTML.-->

@@ -1,0 +1,95 @@
+ 
+ /*  Pour styler la page: les polices, les marges et le fond avec un dégradé de couleur 
+         comme on a fait dans le cours */
+body
+ {
+    font-family: Arial, Helvetica, sans-serif, Times, 'Times New Roman', serif;
+    margin: 50px 60px 50px;
+    width: 90%;
+    background-image: linear-gradient(360deg, rgba(147,94,56, 0.68),rgba(255, 255, 255, 0.884));
+
+     }
+
+  
+  
+  h1 /*  Pour styliser le titre de type h1 */
+  {
+    font-style: italic;
+    font-weight: lighter;
+    display: block;
+    font-size: 50px;
+    text-align:center;
+    margin: auto;
+    color: #4e190fe3;
+
+    
+  }
+ /*  Pour styler tous le contenu et le mettre sous forme d'un box */ 
+ * {
+    box-sizing: border-box;
+  }
+
+  /* Toutes les balises p et ul à la fois pour les changer la taille de la police
+         ainsi que le gras de la police */
+p ,ul  
+{
+    font-size:21px;
+    font-weight: 300;
+}
+
+/* Les classes "column" enfants directs de toutes les classes "row" */
+  .row > .column { 
+    padding: 8px;
+  
+  }
+  
+  /* Après les liens on a fait
+     content: Pour générer le contenu de la classe "row".
+     display: Fait que l'élément se comporte comme un tableau. Pour éviter de travailler avec <table></table>
+     clear: Pour que l'élément sera déplacé vers le bas afin de dégager les flottements à gauche et à droite. */
+  .row:after { 
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /*  Pour modifier les éléments de la classe "column" 
+                -les mettre à gauche
+                -dimensionner sur 20% de la taille de la page */ 
+  .column { 
+    float: left;
+    width: 20%;
+    
+  }
+  
+  /*  Pour styler le curseur de la souris */
+  .cursor { 
+    cursor: pointer;
+  }
+  
+  /* Lorsqu'on place le curseur sur une des images de la page: Un effet de zoom sera appliqué sur la photo */
+  img:hover { 
+    box-sizing: relative;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+    }
+
+
+/*  Pour styler les images en terme de marges. Et les positionné par rapport à leurs position normale  */
+    img { 
+      
+      margin-bottom: -4px;
+      position: relative;
+    }
+    
+    
+
+    
+   
+    
+   
+    

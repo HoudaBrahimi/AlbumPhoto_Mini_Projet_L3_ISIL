@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Albums.css" /> <!-- Insertion du fichier css-->
+    <title>Les merveilles de l'Afrique</title> <!-- Le titre de la page-->
+  </head>
+
+<script src="Albums.js"> </script><!-- Insertion du fichier Javascript-->
+
+<body>
+  <!-- Cette premiere partie contient un lien vers la page d'accueil.-->
+  <a style=" text-align: left; font-size: 18px; color: #ce5626;" href="Accueil_Index.html" > ◀ Retour à la page principale.</a> </br>
+  
+<h1 style="text-align:center "> Les merveilles de l'Afrique:  </h1> <!-- Le titre de la page-->
+<h3 style=" color:rgba(0, 0, 0, 0.795);  text-align: center;"> Veuillez choisir une image parmi les images ci-dessous pour commencer la diapositive (Le slide): </h3>
+ 
+<!--  Dans la partie suivante on a organisé les photos sous forme d'un tableau sans bordures (La classe "row") 
+      telle que chaque ligne contient 04 photos et en tous on a inséré 08 photos par continent (En 02 lignes)
+      donc (08*05 = 40 photos sur tous le projet).
+      
+      Lorsque le curseur est placé sur la photo elle va être zoomée. Et un simple clic sur la photo 
+      commence le slide qui contient (les photos + leurs description)  -->
+
+<!--  Chaque photo est placée dans une classe ".column" et toutes les photos sont de la même dimension (600*400) -->
+
+<div class="row">
+  <div class="column">
+    <img src="AssekremAlgerieMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  
+  <div class="column">
+    <img src="DesertDeNmibMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="KilimanjaroTanzaniaMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+ 
+  <div class="column">
+    <img src="LacNatronTanzaniaMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  
+  <div class="column">
+    <img src="CascadeSousMarineMaurisseMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="MorondavaMadagascarMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="PyramideEgypteMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+  </div>
+
+  <div class="column">
+    <img src="TsingysMadagascarMini.jpg" title="Cliquez pour voir le slide." style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+  </div>
+  
+</div>
+
+<!-- Cette partie permet de créer une croix pour fermer le slide par l'appel à la fonction "closeModal()" déclaré dans le 
+     fichier (Javascript) dans la fonction "onclick()"-->
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times; </span>
+
+<!-- La classe "modal-content" contient le slide complet des photos (La diapositive)
+    tq: toutes les images ont la même dimension (1200*600) -->
+
+  <div class="modal-content">
+
+<!-- On a mit chaque slide dans une classe appelée "mySlides" pour pouvoir l'utilisée à plusieurs reprise.-->
+    <div class="mySlides"> 
+      <div class="numbertext">1 / 8</div> <!-- La numérotation de la page. -->
+      <img src="AssekremAlgerie.jpg" style="width:100%"> <!-- Le nom de l'image + sa taille-->
+    </div>    
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 8</div><!-- La numérotation de la page. -->
+      <img src="DesertDeNmib.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 8</div><!-- La numérotation de la page. -->
+      <img src="KilimanjaroTanzania.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 8</div><!-- La numérotation de la page. -->
+      <img src="LacNatronTanzania.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 8</div><!-- La numérotation de la page. -->
+      <img src="CascadeSousMarineMaurisse.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 8</div><!-- La numérotation de la page. -->
+      <img src="MorondavaMadagascar.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 8</div><!-- La numérotation de la page. -->
+      <img src="PyramideEgypte.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">8 / 8</div><!-- La numérotation de la page. -->
+      <img src="TsingysMadagascar.jpg" style="width:100%"><!-- Le nom de l'image + sa taille-->
+    </div>
+
+<!-- Ici une petite description sur l'image qui indique le nom de la merveille et son emplacement géographique
+    avec l'id="caption" et dans une balise de type paragraphe <p></p>.
+    Telle que le paragraphe se trouve dans l'attribut alt sur chaque images -->
+    
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+    
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- Pour aller vers l'image précédente par une flèche.-->
+    <a class="next" onclick="plusSlides(1)">&#10095;</a><!-- Pour aller vers l'image suivante par une flèche.-->
+
+   <!-- Cette partie et un mini tableau contenant toutes les images en-dessous de la description sur le slide 
+        et qui permet de de passer d'une image vers une autre par un simple clic sur l'image (Comme en light-box). 
+        Toutes les images ont la même dimension 600*400. -->
+
+<!-- Onclick fait appel à la fonction currentSlide() crée sur le script javascript pour afficher l'image actuelle.-->   
+
+    <div class="column">
+      <img class="demo cursor" src="AssekremAlgerieMini.jpg" style="width:100%" onclick="currentSlide(1)" alt="<i> <u> Assekrem (Algerie): </u></i> </br>Classlé le meilleur coucher de soleil en afrique situé en sud de l'Algerie.">
+    </div>        
+
+    <div class="column">
+      <img class="demo cursor" src="DesertDeNmibMini.jpg" style="width:100%" onclick="currentSlide(2)" alt="<i> <u> Le desert de Namibie: </u> </i> </br> Le plus ancien désert du monde, avec ses immenses dunes colorées qui se jettent dans l’océan Atlantique.">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="KilimanjaroTanzaniaMini.jpg" style="width:100%" onclick="currentSlide(3)" alt="<i> <u> Le Kilimandjaro (Tanzanie) haut de 5895 mètres </u></i>:</br> C'est la montagne isolée la plus haute du monde.">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="LacNatronTanzaniaMini.jpg" style="width:100%" onclick="currentSlide(4)" alt="<i> <u> Le lac Natron (Tanzanie) </u> </i>: </br> est un lac de soude, salé, endoréique d'origine tectonique, situé dans le nord de la Tanzanie.">
+    </div> 
+    
+    <div class="column">
+      <img class="demo cursor" src="CascadeSousMarineMaurisseMini.jpg" style="width:100%" onclick="currentSlide(5)" alt="<i> <u>La Cascade Sous-Marine (île Maurice) </u></i>:</br> Une incroyable cascade sous les mers turquoises qui ressemble à une chute d'eau allant jusqu'à plus de 4000 mètres.">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="MorondavaMadagascarMini.jpg" style="width:100%" onclick="currentSlide(6)" alt="<i> <u> Morondava (Madagascar)</u> </i>: </br> Ces arbres, vieux de plus de 800 ans sont appelés renala  qui signifie ⟪ Mère de la forêt ⟫ en Madagascar.">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="PyramideEgypteMini.jpg" style="width:100%" onclick="currentSlide(7)" alt="<i> <u>Les pyramides de Gizeh (Egypte)</u> </i>: </br> Sont l'ensemble des pyramides égyptiennes situées dans la nécropole de Gizeh. ">
+    </div> 
+
+    <div class="column">
+      <img class="demo cursor" src="TsingysMadagascarMini.jpg" style="width:100%" onclick="currentSlide(8)" alt="<i> <u>Tsingys (Madagascar) </u> </i>: </br> Sont de vastes étendues de calcaire et de roches friables composées de coquillages fossilisés situé en Madagascar.">
+    </div> 
+
+  </div>
+</div> <!-- Fin du slide des images.-->
+
+</body>
+</html><!-- Fin du fichier HTML.-->
+
